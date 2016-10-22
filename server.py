@@ -1,14 +1,14 @@
 from bottle import route, run, static_file, template
+import sysinfo
 
 name="My Web Site"
 
 pages = {
-  1 : { 'Intro': '''<h1>Scrolling Nav</h1>'''
-                 '''<p><strong>Usage Instructions:</strong> '''
-                 '''Make sure to include the <code>scrolling-nav.js</code>, <code>jquery.easing.min.js</code>, and <code>scrolling-nav.css</code> files. To make a link smooth scroll to another section on the page, give the link the <code>.page-scroll</code> class and set the link target to a corresponding ID on the page.</p>
-                    <a class="btn btn-default page-scroll" href="#about">Click Me to Scroll Down!</a>
-                    '''},
-  2 : { 'About': '''<h1>About Section</h1>'''},
+  1 : { 'Intro': '''<h1>System Information</h1>'''
+                 '''<p>This is an example of usage of OPWS.</p>'''
+                 '''<a class="btn btn-default page-scroll" href="#system">View system information!</a>'''},
+  2 : { 'System': '''<h1>System Information</h1>'''
+                 '''<pre>''' + sysinfo.getsysinfo() + '''</pre>'''},
   3 : { 'Services': '''<h1>Services Section</h1>'''},
   4 : { 'Contact': '''<h1>Contact Section</h1>'''},
   }
